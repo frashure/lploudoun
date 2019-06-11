@@ -1,0 +1,11 @@
+.Signup {
+    display: inline-block;
+    width: auto;
+}
+
+form {
+    display: flex;
+    width: auto;
+    flex-direction: column;
+}
+
