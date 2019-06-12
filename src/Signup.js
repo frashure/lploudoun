@@ -1,9 +1,11 @@
 import React from 'react';
 import './Signup.css';
 
-function Signup() {
-  return (
-    <div className="Signup">
+class Signup extends React.Component {
+
+render() {
+    return (
+      <div className="Signup">
         <form>
             First name:
             <br />
@@ -15,8 +17,11 @@ function Signup() {
             <br />
             <input type="text" name="email"></input>
         </form>
-    </div>
+      </div>
   );
+}
+
+
 }
 
 export default Signup;
