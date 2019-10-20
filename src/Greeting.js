@@ -5,7 +5,7 @@ class Greeting extends React.Component {
     render() {
         return (
         <div className="Greeting">
-                Click here to signup to be notified!
+                Sign up to be notified of any LPLC news/events!<br /><br />
                 <button id="signup" onClick={this.props.handler}>Click here!</button>
         </div>
     )

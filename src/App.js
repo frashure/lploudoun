@@ -18,7 +18,7 @@ class App extends React.Component {
 
   signupHandler() {
     this.setState({
-      signup: false
+      signup: true
     })
   }
 
