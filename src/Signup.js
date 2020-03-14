@@ -34,6 +34,15 @@ handleChangeEmail(e) {
 
 handleSubmit(e) {
   e.preventDefault();
+
+  fetch('https://api.virginiaelects.com/lploudoun/first/' + this.state.firstName + '/last/' + this.state.lastName + '/email/' + this.state.email, {
+  method: 'POST',
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'text/plain',
+  }
+})
+
   this.setState({submitted: true});
   console.log(
     'Email: ' + this.state.email + '\n' +
