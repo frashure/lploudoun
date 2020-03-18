@@ -38,7 +38,6 @@ handleSubmit(e) {
   fetch('https://api.virginiaelects.com/lploudoun/first/' + this.state.firstName + '/last/' + this.state.lastName + '/email/' + this.state.email, {
   method: 'POST',
   headers: {
-    'Accept': 'application/json',
     'Content-Type': 'text/plain',
   }
 })
