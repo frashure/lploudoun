@@ -1,5 +1,6 @@
 import React from 'react';
 import './Signup.css';
+import Thanks from './Thanks.js';
 
 
 class Signup extends React.Component {
@@ -10,7 +11,10 @@ class Signup extends React.Component {
       email: '',
       firstName: '',
       lastName: '',
-      submitted: false
+      resident: 'T',
+      submitted: false,
+      err: false,
+      errorText: ''
   }
 
   this.handleChangeEmail = this.handleChangeEmail.bind(this);
@@ -18,6 +22,7 @@ class Signup extends React.Component {
   this.handleChangeLastName = this.handleChangeLastName.bind(this);
   this.handleChangeResident = this.handleChangeResident.bind(this);
   this.handleSubmit = this.handleSubmit.bind(this);
+  this.handleRetry = this.handleRetry.bind(this);
 
 }
 
@@ -37,10 +42,14 @@ handleChangeResident(e) {
   this.setState({resident: e.target.value});
 }
 
-handleSubmit(e) {
+handleRetry(e) {
+  this.setState({submitted: false});
+}
+
+async handleSubmit(e) {
   e.preventDefault();
 
-  fetch('https://api.virginiaelects.com/lploudoun/', {
+  await fetch('https://api.virginiaelects.com/lploudoun/', {
   method: 'POST',
   body: JSON.stringify({
     'fName': this.state.firstName,
@@ -52,20 +61,32 @@ handleSubmit(e) {
     'Content-Type': 'application/json',
   }
 })
-
-  this.setState({submitted: true});
-  console.log(
-    'Email: ' + this.state.email + '\n' +
-    'First name: ' + this.state.firstName + '\n' +
-    'Last name: ' + this.state.lastName + '\n' +
-    'Submitted: ' + this.state.submitted + '\n' +
-    'Resident:' + this.state.resident)
+.then ((response) => {
+  return response.json()
+})
+.then((jsonRes) => {
+  console.log(jsonRes);
+  console.log(jsonRes.errno == 1062);
+  if (jsonRes.errno === 1062) {
+    this.setState({err: true});
+    this.setState({errorText: jsonRes.code});
+    this.setState({submitted: true});
+  }
+});
 }
 
 render() {
     return (
-      <div className="Signup">
-        <form onSubmit={this.handleSubmit}>
+        <div className="Signup">
+          {this.state.submitted ?
+            this.state.err ?
+              <div>It looks like that email is already in our list.
+                <br />
+                <br />
+                <button onClick={this.handleRetry}>Try Again</button>
+              </div>
+          : <Thanks err={this.state.err}/> :
+            <form onSubmit={this.handleSubmit}>
             <label htmlFor="firstName">First Name:</label>
             <input type="text" name="firstName" value={this.state.firstName} onChange={this.handleChangeFirstName}></input>
             <label htmlFor="lastName">Last Name: </label>
@@ -78,8 +99,9 @@ render() {
               <option value="F">No</option>
               </select> 
             <input type="submit" value="Submit" />
-        </form>
+        </form>}
       </div>
+
   );
 }
 
