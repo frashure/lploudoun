@@ -90,15 +90,19 @@ render() {
             <form onSubmit={this.handleSubmit}>
             <label htmlFor="firstName">First Name:</label>
             <input type="text" name="firstName" value={this.state.firstName} onChange={this.handleChangeFirstName}></input>
+            <br />
             <label htmlFor="lastName">Last Name: </label>
             <input type="text" name="lastName" value={this.state.lastName} onChange={this.handleChangeLastName}></input>
+            <br />
             <label htmlFor="email">Email: </label>
             <input type="text" name="email"  value={this.state.email} onChange={this.handleChangeEmail}></input>
+            <br />
             <label htmlFor="resident">Are you a resident of Loudoun?</label>
             <select name="resident" onChange={this.handleChangeResident}>
               <option value="T">Yes</option>
               <option value="F">No</option>
-              </select> 
+            </select> 
+              <br />
             <input type="submit" value="Submit" />
         </form>}
       </div>
