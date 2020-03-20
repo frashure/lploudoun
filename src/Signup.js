@@ -62,16 +62,17 @@ async handleSubmit(e) {
   }
 })
 .then ((response) => {
+  this.setState({err: false});
   return response.json()
 })
 .then((jsonRes) => {
-  console.log(jsonRes);
-  console.log(jsonRes.errno == 1062);
-  if (jsonRes.errno === 1062) {
-    this.setState({err: true});
-    this.setState({errorText: jsonRes.code});
-    this.setState({submitted: true});
+  if (jsonRes.errno) {
+    if (jsonRes.errno === 1062) {
+      this.setState({err: true});
+      this.setState({errorText: jsonRes.code});
+      }
   }
+  this.setState({submitted: true});
 });
 }
 
