@@ -1,4 +1,4 @@
-.Signup {
+/* .Signup {
     display: inline-block;
     width: auto;
 }
@@ -16,8 +16,9 @@ label {
     text-align: right;
 }
 
-label, input {
+label, input, select {
     margin: .5rem .5rem;
+    box-sizing: border-box;
 }
 
 input {
@@ -28,3 +29,91 @@ input:focus {
     background-color: yellow;
 }
 
+select {
+    margin-left: .8rem;
+}
+
+label[for=resident] {
+    text-align: left;
+    margin-right: .9rem;
+} */
+
+
+.signup-form{
+	font: 95% Arial, Helvetica, sans-serif;
+	max-width: 400px;
+	margin: 10px auto;
+	padding: 16px;
+	background: #F7F7F7;
+}
+.signup-form h1{
+	background: gray;
+	padding: 20px 0;
+	font-size: 140%;
+	font-weight: 300;
+	text-align: center;
+	color: #fff;
+	margin: -16px -16px 16px -16px;
+}
+.signup-form input[type="text"],
+.signup-form input[type="date"],
+.signup-form input[type="datetime"],
+.signup-form input[type="email"],
+.signup-form input[type="number"],
+.signup-form input[type="search"],
+.signup-form input[type="time"],
+.signup-form input[type="url"],
+.signup-form textarea,
+.signup-form select 
+{
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	outline: none;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	background: #fff;
+	margin-bottom: 4%;
+	border: 1px solid #ccc;
+	padding: 3%;
+	color: black;
+	font: 95% Arial, Helvetica, sans-serif;
+}
+.signup-form input[type="text"]:focus,
+.signup-form input[type="date"]:focus,
+.signup-form input[type="datetime"]:focus,
+.signup-form input[type="email"]:focus,
+.signup-form input[type="number"]:focus,
+.signup-form input[type="search"]:focus,
+.signup-form input[type="time"]:focus,
+.signup-form input[type="url"]:focus,
+.signup-form textarea:focus,
+.signup-form select:focus
+{
+	box-shadow: 0 0 5px yellow;
+	padding: 3%;
+	border: 1px solid black;
+}
+
+.signup-form input[type="submit"],
+.signup-form input[type="button"]{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	padding: 3%;
+	background: gray;
+	border-bottom: 2px solid black;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;	
+	color: white;
+}
+.signup-form input[type="submit"]:hover,
+.signup-form input[type="button"]:hover{
+    background: yellow;
+    color: black;
+}

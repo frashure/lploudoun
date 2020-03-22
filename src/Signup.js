@@ -88,7 +88,7 @@ render() {
               </div>
           : <Thanks err={this.state.err}/> :
             <form onSubmit={this.handleSubmit}>
-            <label htmlFor="firstName">First Name:</label>
+            {/* <label htmlFor="firstName">First Name:</label>
             <input type="text" name="firstName" value={this.state.firstName} onChange={this.handleChangeFirstName}></input>
             <br />
             <label htmlFor="lastName">Last Name: </label>
@@ -103,7 +103,24 @@ render() {
               <option value="F">No</option>
             </select> 
               <br />
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" /> */}
+
+            <div class="signup-form">
+            <h1>Sign Up</h1>
+            <form>
+            <input type="text" name="firstName" onChange={this.handleChangeFirstName} placeholder="First Name" required/>
+            <input type="text" name="lastName" onChange={this.handleChangeLastName} placeholder="Last Name" required/>
+            <input type="email" name="email" onChange={this.handleChangeEmail} placeholder="Email Address" required/>
+            Are you a resident of Loudoun?
+            <select name="resident" onChange={this.handleChangeResident} required>
+              <option value="T">Yes</option>
+              <option value="F">No</option>
+            </select> 
+            <input type="submit" value="Send" />
+            </form>
+            </div>
+
+
         </form>}
       </div>
 
