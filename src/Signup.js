@@ -116,7 +116,7 @@ render() {
               <option value="T">Yes</option>
               <option value="F">No</option>
             </select> 
-            <input type="submit" value="Send" />
+            <input type="submit" value="Submit" />
             </form>
             </div>
 

@@ -1,0 +1,14 @@
+button {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 1%;
+	background: gray;
+	border: 2px solid black;	
+	color: white;
+}
+
+button:hover {
+    background: yellow;
+    color: black;
+}
