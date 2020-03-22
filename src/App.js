@@ -27,9 +27,9 @@ class App extends React.Component {
         <div className="App">
           <header className="App-header">
             <img src={lplcLogo} className="App-logo" alt="logo" />
-            <h3>
+            {/* <h3>
               Coming soon!
-            </h3>
+            </h3> */}
           </header>
           {this.state.signup ? <Signup /> : <Greeting handler = {this.signupHandler} />}
       </div>
