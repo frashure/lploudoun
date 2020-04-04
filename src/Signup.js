@@ -49,7 +49,15 @@ handleRetry(e) {
 async handleSubmit(e) {
   e.preventDefault();
 
-  await fetch('https://api.virginiaelects.com/lploudoun/', {
+  var url;
+  if (process.env.RUNNINGON == "heroku") {
+    url = 'http://vaelects.herokuapp.com/lploudoun'
+  }
+  else {
+    url = 'https://api.virginiaelects.com/lploudoun/'
+  }
+
+  await fetch(url, {
   method: 'POST',
   body: JSON.stringify({
     'fName': this.state.firstName,
