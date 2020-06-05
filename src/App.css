@@ -1,7 +1,27 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(ttps://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap);
+}
+
+/* @font-face {
+  font-family: "Lora";
+  src: local('Lora'), url("/fonts/Lora-Regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: "Journal";
+  src: local('Journal'), url("/fonts/Journal.ttf") format('trutype');
+} */
+
 .App {
   color: #56565a;
   text-align: center;
   font-size: 18px;
+  font-family: Roboto, sans-serif;
+}
+
+h3 {
+  font-family: Toboto;
 }
 
 .App-logo {

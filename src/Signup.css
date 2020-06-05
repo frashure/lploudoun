@@ -47,7 +47,7 @@ label[for=resident] {
 	background: #F7F7F7;
 }
 .signup-form h1{
-	background: gray;
+	background: #56565a;
 	padding: 20px 0;
 	font-size: 140%;
 	font-weight: 300;
@@ -93,7 +93,7 @@ label[for=resident] {
 .signup-form textarea:focus,
 .signup-form select:focus
 {
-	box-shadow: 0 0 5px yellow;
+	box-shadow: 0 0 5px #E5C601;
 	padding: 3%;
 	border: 1px solid black;
 }
@@ -105,7 +105,7 @@ label[for=resident] {
 	-moz-box-sizing: border-box;
 	width: 100%;
 	padding: 3%;
-	background: gray;
+	background: #56565a;
 	/* border-bottom: 2px solid black; */
 	/* border-top-style: none;
 	border-right-style: none;
@@ -114,6 +114,6 @@ label[for=resident] {
 }
 .signup-form input[type="submit"]:hover,
 .signup-form input[type="button"]:hover{
-    background: yellow;
+    background: #E5C601;
     color: black;
 }

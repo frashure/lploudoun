@@ -3,6 +3,9 @@
 # images
 src/images
 
+# fonts
+src/fonts
+
 # dependencies
 /node_modules
 /.pnp
