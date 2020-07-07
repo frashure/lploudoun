@@ -8,6 +8,7 @@
     "react-scripts": "^3.4.1"
   },
   "scripts": {
+    "winstart": "react-scripts start",
     "start": "PORT=1776 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
