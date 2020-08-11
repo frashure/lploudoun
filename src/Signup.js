@@ -71,7 +71,7 @@ async handleSubmit(e) {
 })
 .then ((response) => {
   this.setState({err: false});
-  return response.json()
+  return response
 })
 .then((jsonRes) => {
   if (jsonRes.errno) {
